@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'Calligraphy/home.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <title>Artwork List</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-style: italic;
+            color: black;
+        }
+
+
+        .background {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .background:hover {
+            transform: scale(1.1);
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Gallery</h1>
+
+        <div class="row">
+            <div class="img-center col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/islamic_calligraphy_1.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/islamic_calligraphy_4.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/islamic_calligraphy_3.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/islamic_calligraphy_2.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/islamic_calligraphy_5.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/islamic_calligraphy_9.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                </div>
+            </div>
+
+
+            <h2>Style type:</h2>
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/kufi_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                    <a href="{% url 'Calligraphy:styles_list' %}#Kufi"> Kufic style</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/muhaqqaq_style.jpeg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                    <a href="{% url 'Calligraphy:styles_list' %}#Muhaqqaq"> Muhaqqaq style</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/naskh_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                    <a href="{% url 'Calligraphy:styles_list' %}#Naskh"> Naskh style</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/reyhan_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                    <a href="{% url 'Calligraphy:styles_list' %}#Rayhani"> Rayhani style</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/riqa_style.JPEG' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                    <a href="{% url 'Calligraphy:styles_list' %}#Riqa"> Riqa style</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="background product">
+                    <img src="{% static 'Calligraphy/thuluth_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+
+                    <a href="{% url 'Calligraphy:styles_list' %}#Thuluth"> Thuluth style</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+

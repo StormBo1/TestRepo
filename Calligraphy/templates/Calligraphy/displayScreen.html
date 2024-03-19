@@ -1,0 +1,176 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Calligraphy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrF5b6EGGoI1WkmY5Eqd4e3qD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'reviews/home.css' %}">
+    <!-- Add your custom CSS styles here -->
+    <style>
+        body {
+            background-image: url("{% static 'islamic_calligraphy_9.jpeg' %}");
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130vh
+        }
+
+        header {
+            background-color: grey;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+         nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: grey;
+            z-index: 1000;
+        }
+
+        #tophat-dropdown {
+            color: blue;
+        }
+
+        #menuOpenCloseIcon {
+            color: brown !important;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #nav-links {
+            display: none;
+            gap: 20px;
+            flex-direction: column; /* Changed to column layout */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            width: 200px
+        }
+
+        #nav-links a {
+            color: #fff;
+            padding: 10px;
+            display: block;
+        }
+
+
+        main {
+            margin-top: 60px;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: brown;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .centered-image {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.style.display = (navLinks.style.display === 'none' || navLinks.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            <!-- Inside the nav section of your header -->
+
+            <span id="tophat-dropdown">
+                <i onclick="toggleMenu()" id="menuOpenCloseIcon" class="material-icons">menu</i>
+            </span>
+            <div id="nav-links">
+                <a href="{% url 'Calligraphy:about_calligraphy' %}" class="btn btn-link">About Calligraphy</a>
+                <a href="{% url 'Calligraphy:artwork_list' %}" class="btn btn-link">Types of Artwork</a>
+                <a href="{% url 'Calligraphy:styles_list' %}" class="btn btn-link">Styles</a>
+            </div>
+        </nav>
+        <h1>Islamic Calligraphy</h1>
+        <form action="{% url 'Calligraphy:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </header>
+
+    <main>
+
+        {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}! You are logged in.</p>
+        <p>Welcome to your webpage. Here's a brief description of Calligraphy...</p>
+        <br>
+        <p>ISLAMIC CALLIGRAPHY is the artistic practice of handwriting and calligraphy, in the languages which use Arabic alphabet or the alphabets derived from it.
+           it includes Arabic, Persian, Ottoman, and Urdu calligraphy. It is known as khatt Arabi, which translates into Arabic line, design, or construction.
+           The development of Islamic calligraphy is strongly tied to the Qur'an; chapters and excerpts from the Qur'an are a common and almost universal text upon which Islamic calligraphy is based.
+            However, Islamic calligraphy is not limited to strictly religious subjects, objects, or spaces. Like all Islamic art, it encompasses a diverse array of works created in a wide variety of contexts.
+            The prevalence of calligraphy in Islamic art is not directly related to its non-figural tradition; rather, it reflects the centrality of the notion of writing and written text in Islam.
+            It is noteworthy, for instance, that the Prophet Muhammad is related to have said: "The first thing God created was the pen."
+
+            Islamic calligraphy developed from two major styles: Kufic and Naskh. There are several variations of each, as well as regionally specific styles.
+            Islamic calligraphy has also been incorporated into modern art beginning with the post-colonial period in the Middle East, as well as the more recent style of calligraffiti.
+        </p>
+        <div class="centered-image">
+            <img src="{% static 'Calligraphy/islamic_calligraphy_9.jpeg' %}" alt="Islamic Calligraphy" style="width: 30%;">
+        </div>
+        {% else %}
+            <p>Please <a href="{% url 'login' %}" class="btn btn-primary">login</a> to continue.</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        &copy; 2023 Islamic Calligraphy. All rights reserved.
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-PHxSYsN6t7r0e8+TtQlxJ/HL8pGOSCws94XFP55xWxWA2SMqs1IKvOsMZFyym1fG" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js" integrity="sha384-csJq4l5b5nb3COjHx5UnMS/4dby7eJR/J5HR6SJoZmCC3KlI7C+kgA2L9GO9SBJP" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
