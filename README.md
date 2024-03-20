@@ -30,7 +30,9 @@ picture frame hanging on the walls in our homes , places of work, marketplaces e
 
 ## Requirements
 
-- Python 3.0
+- Python 3.0 (latest version)
+- Virtual environment activated
+- GIT installed
 - Pip (python package installer)
 - Code editor IE. Pycharm, VS code etc
 - High performace computer (recomended)
@@ -45,9 +47,13 @@ picture frame hanging on the walls in our homes , places of work, marketplaces e
    cd GitPortfolios
 
 3. ** Install Dependancies:**
-   pip install in your terminal
+   GIT installed
+   (in your terminal type the following)
+   pip install
+   pip install django
+   pip install pillow
 
-4. ** Run the project after looking at the USAGE section in the README:**
+5. ** Run the project after looking at the USAGE section in the README:**
 
    python manage.py runserver
 
