@@ -49,9 +49,9 @@ picture frame hanging on the walls in our homes , places of work, marketplaces e
 3. ** Install Dependancies:**
    GIT installed
    (in your terminal type the following)
-   pip install
-   pip install django
-   pip install pillow
+   - pip install
+   - pip install django
+   - pip install pillow
 
 5. ** Run the project after looking at the USAGE section in the README:**
 
