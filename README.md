@@ -41,10 +41,10 @@ picture frame hanging on the walls in our homes , places of work, marketplaces e
 
 1. **Clone the repository:**
 
-   git clone https://github.com/StormBo1/GitPortfolios.git
+   git clone https://github.com/StormBo1/TestRepo.git
 
 2. **Navigate to Project directory:
-   cd GitPortfolios
+   cd TestRepo
 
 3. ** Install Dependancies:**
    GIT installed
