@@ -38,10 +38,17 @@
             transform: scale(1.1);
         }
 
+        img {
+        width: 200px; /* You can adjust this value to your desired size */
+        height: 200px; /* You can adjust this value to your desired size */
+        object-fit: cover; /* This ensures images maintain aspect ratio and fill the container */
+        }
+
         .product-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 20px;
+        }
     </style>
 </head>
 
@@ -94,9 +101,10 @@
 
 
             <h2>Style type:</h2>
+
             <div class="col-md-6">
                 <div class="background product">
-                    <img src="{% static 'Calligraphy/kufi_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                    <img src="{% static 'Calligraphy/kufi_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 95%;">
 
                     <a href="{% url 'Calligraphy:styles_list' %}#Kufi"> Kufic style</a>
                 </div>
@@ -112,7 +120,7 @@
 
             <div class="col-md-6">
                 <div class="background product">
-                    <img src="{% static 'Calligraphy/naskh_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                    <img src="{% static 'Calligraphy/naskh_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 95%;">
 
                     <a href="{% url 'Calligraphy:styles_list' %}#Naskh"> Naskh style</a>
                 </div>
@@ -128,7 +136,7 @@
 
             <div class="col-md-6">
                 <div class="background product">
-                    <img src="{% static 'Calligraphy/riqa_style.JPEG' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                    <img src="{% static 'Calligraphy/riqa_style.JPEG' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 95%;">
 
                     <a href="{% url 'Calligraphy:styles_list' %}#Riqa"> Riqa style</a>
                 </div>
@@ -136,7 +144,7 @@
 
             <div class="col-md-6">
                 <div class="background product">
-                    <img src="{% static 'Calligraphy/thuluth_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 90%;">
+                    <img src="{% static 'Calligraphy/thuluth_style.jpg' %}" class="img-fluid" alt="Islamic Calligraphy" style="width: 95%;">
 
                     <a href="{% url 'Calligraphy:styles_list' %}#Thuluth"> Thuluth style</a>
                 </div>
